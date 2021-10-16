@@ -16,17 +16,17 @@ export default function BookOrder() {
                 href="tel:0772292374"
                 className="flex flex-row items-center my-1 p-3 transition duration-500 ease-in-out hover:bg-white hover:bg-opacity-70 transform hover:-translate-y-1 hover:scale-105"
               >
-                <div className="w-12 h-12 mr-2">
+                <div className="w-16 h-16 mr-2">
                   <Image
                     src="/icons/icons8-phone.svg"
-                    alt="Số điện thoại"
+                    alt="Hotline"
                     layout="responsive"
                     width={16}
                     height={16}
                   />
                 </div>
                 <div className="text-lg md:text-2xl text-left">
-                  <p className="font-bold">Số điện thoại</p>
+                  <p className="font-bold">Hotline</p>
                   <p className="text-logo font-bold">077.229.2364</p>
                 </div>
               </a>
@@ -36,7 +36,7 @@ export default function BookOrder() {
                 href="tel:0772292374"
                 className="flex flex-row items-center my-1 p-3 transition duration-500 ease-in-out hover:bg-white hover:bg-opacity-70 transform hover:-translate-y-1 hover:scale-105"
               >
-                <div className="w-12 h-12 mr-2">
+                <div className="w-16 h-16 mr-2">
                   <Image
                     src="/icons/icons8-facebook.svg"
                     alt="Facebook"
@@ -56,7 +56,7 @@ export default function BookOrder() {
                 href="tel:0772292374"
                 className="flex flex-row items-center my-1 p-3 transition duration-500 ease-in-out hover:bg-white hover:bg-opacity-70 transform hover:-translate-y-1 hover:scale-105"
               >
-                <div className="w-12 h-12 mr-2">
+                <div className="w-16 h-16 mr-2">
                   <Image
                     src="/icons/icons8-instagram.svg"
                     alt="Instagram"
