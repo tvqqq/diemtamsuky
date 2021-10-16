@@ -17,9 +17,10 @@ export default function Home() {
       <main>
         <Banner />
 
-        <div className="container mx-auto px-5 md:px-32">
-          <Story />
-          <Menu />
+        <div className="bg-back">
+          <div className="container mx-auto">
+            <Menu />
+          </div>
         </div>
 
         <BookOrder />

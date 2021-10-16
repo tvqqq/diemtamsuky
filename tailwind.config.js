@@ -5,6 +5,11 @@ module.exports = {
     extend: {
       colors: {
         logo: '#6A1D0F',
+        back: '#E1D3C1',
+      },
+      backgroundImage: {
+        'banner-1': "url('/banner1.jpg')",
+        'banner-2': "url('/banner2.jpg')",
       },
     },
     fontFamily: {

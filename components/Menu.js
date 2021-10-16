@@ -3,65 +3,69 @@ import Image from 'next/image'
 export default function Menu() {
   return (
     <>
-      <div className="my-20">
-        <h1 className="text-center text-6xl md:text-8xl font-mono">
-          Các món ăn điểm tâm
+      <div className="py-20 px-5 lg:px-32">
+        <h1 className="text-center text-7xl font-mono mb-4">
+          Các món điểm tâm
         </h1>
-
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
-          <div className="shadow-lg rounded-lg p-3 text-center">
-            <Image src="/dimsum.webp" alt="Dimsum" width={300} height={300} />
-            <h2 className="font-serif font-bold leading-6 text-2xl md:text-4xl text-logo">
-              Há cảo
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="shadow-sm rounded-xl p-4 text-center bg-white bg-opacity-50">
+            <Image
+              src="/dimsum.webp"
+              alt="Dimsum"
+              width={300}
+              height={300}
+              className="rounded-xl shadow"
+            />
+            <h2 className="font-serif leading-8 text-3xl text-logo my-1">
+              Há cảo Há cảo Xíu mại
             </h2>
-            <p className="text-base md:text-lg">32.000 VNĐ</p>
-            <p className="text-sm md:text-base text-gray-700">
-              / 1 phần / 4 viên
-            </p>
+            <p className="text-xl">32.000 VNĐ</p>
+            <p className="text-base text-gray-700">/ 1 phần / 4 viên</p>
           </div>
 
-          <div className="shadow-lg rounded-lg p-3 text-center">
-            <Image src="/dimsum.webp" alt="Dimsum" width={300} height={300} />
-            <h2 className="font-serif font-bold leading-6 text-2xl md:text-4xl text-logo">
-              Há cảo
+          <div className="shadow-sm rounded-xl p-4 text-center bg-white bg-opacity-50">
+            <Image
+              src="/dimsum.webp"
+              alt="Dimsum"
+              width={300}
+              height={300}
+              className="rounded-xl shadow"
+            />
+            <h2 className="font-serif leading-8 text-3xl text-logo my-1">
+              Há cảo Há cảo Xíu mại
             </h2>
-            <p className="text-base md:text-lg">32.000 VNĐ</p>
-            <p className="text-sm md:text-base text-gray-700">
-              / 1 phần / 4 viên
-            </p>
+            <p className="text-xl">32.000 VNĐ</p>
+            <p className="text-base text-gray-700">/ 1 phần / 4 viên</p>
           </div>
 
-          <div className="shadow-lg rounded-lg p-3 text-center">
-            <Image src="/dimsum.webp" alt="Dimsum" width={300} height={300} />
-            <h2 className="font-serif font-bold leading-6 text-2xl md:text-4xl text-logo">
-              Há cảo
+          <div className="shadow-sm rounded-xl p-4 text-center bg-white bg-opacity-50">
+            <Image
+              src="/dimsum.webp"
+              alt="Dimsum"
+              width={300}
+              height={300}
+              className="rounded-xl shadow"
+            />
+            <h2 className="font-serif leading-8 text-3xl text-logo my-1">
+              Há cảo Há cảo Xíu mại
             </h2>
-            <p className="text-base md:text-lg">32.000 VNĐ</p>
-            <p className="text-sm md:text-base text-gray-700">
-              / 1 phần / 4 viên
-            </p>
+            <p className="text-xl">32.000 VNĐ</p>
+            <p className="text-base text-gray-700">/ 1 phần / 4 viên</p>
           </div>
 
-          <div className="shadow-lg rounded-lg p-3 text-center">
-            <Image src="/dimsum.webp" alt="Dimsum" width={300} height={300} />
-            <h2 className="font-serif font-bold leading-6 text-2xl md:text-4xl text-logo">
-              Bánh bao khoai môn
+          <div className="shadow-sm rounded-xl p-4 text-center bg-white bg-opacity-50">
+            <Image
+              src="/dimsum.webp"
+              alt="Dimsum"
+              width={300}
+              height={300}
+              className="rounded-xl shadow"
+            />
+            <h2 className="font-serif leading-8 text-3xl text-logo my-1">
+              Há cảo Há cảo Xíu mại
             </h2>
-            <p className="text-base md:text-lg">32.000 VNĐ</p>
-            <p className="text-sm md:text-base text-gray-700">
-              / 1 phần / 4 viên
-            </p>
-          </div>
-
-          <div className="shadow-lg rounded-lg p-3 text-center">
-            <Image src="/dimsum.webp" alt="Dimsum" width={300} height={300} />
-            <h2 className="font-serif font-bold leading-6 text-2xl md:text-4xl text-logo">
-              Há cảo
-            </h2>
-            <p className="text-base md:text-lg">32.000 VNĐ</p>
-            <p className="text-sm md:text-base text-gray-700">
-              / 1 phần / 4 viên
-            </p>
+            <p className="text-xl">32.000 VNĐ</p>
+            <p className="text-base text-gray-700">/ 1 phần / 4 viên</p>
           </div>
         </div>
       </div>

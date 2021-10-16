@@ -1,7 +1,13 @@
-.banner1 {
-  background-image: url('/banner1.jpg');
+@supports (-webkit-touch-callout: none) {
+  /* CSS for iOS devices */
+  .bgParallax {
+    background-attachment: scroll;
+  }
 }
 
-.banner2 {
-  background-image: url('/banner2.jpg');
+@supports not (-webkit-touch-callout: none) {
+  /* CSS for other than iOS devices */
+  .bgParallax {
+    background-attachment: fixed;
+  }
 }

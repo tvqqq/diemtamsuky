@@ -5,7 +5,7 @@ export default function BookOrder() {
   return (
     <>
       <header
-        className={`flex items-center justify-center bg-fixed bg-center bg-cover ${styles.banner2}`}
+        className={`flex items-center justify-center bg-center bg-cover bg-banner-2 ${styles.bgParallax}`}
       >
         <div className="my-20 p-10 bg-opacity-60 bg-white rounded-xl shadow-2xl text-center">
           <h1 className="font-mono text-6xl">Đặt hàng</h1>
