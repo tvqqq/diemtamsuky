@@ -4,7 +4,7 @@ export default function Menu() {
   return (
     <>
       <div className="py-20 px-5 lg:px-32">
-        <h1 className="text-center text-7xl font-mono mb-4">
+        <h1 className="text-center text-5xl md:text-7xl font-mono mb-4">
           Các món điểm tâm
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
