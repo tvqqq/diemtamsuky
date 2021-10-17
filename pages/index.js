@@ -9,9 +9,11 @@ export default function Home() {
     <div>
       <Head>
         <title>Điểm Tâm Sú Ky - Dimsum truyền thống Trung Hoa</title>
-        <meta name="description" content="Dimsum truyền thống Trung Hoa" />
+        <meta
+          name="description"
+          content="Quán phục vụ các món dimsum truyền thống Trung Hoa: Há Cảo, Xíu Mại, Bánh Xếp, Bánh Bao v.v..."
+        />
         <link rel="icon" href="/favicon.ico" />
-        <meta property="og:image" content="/diemtamsuky-logo.svg" />
       </Head>
 
       <main>
