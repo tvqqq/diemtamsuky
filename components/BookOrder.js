@@ -8,7 +8,7 @@ export default function BookOrder() {
         className={`flex items-center justify-center bg-center bg-cover bg-banner-2 ${styles.bgParallax}`}
       >
         <div className="my-20 p-10 bg-opacity-60 bg-white rounded-xl shadow-2xl text-center">
-          <h1 className="font-serif text-4xl md:text-6xl mb-3">Đặt hàng</h1>
+          <h1 className="font-serif text-6xl mb-3">Đặt hàng</h1>
           <h2 className="text-xl mb-3">- GIAO HÀNG TP.HCM -</h2>
           <a
             href="tel:0903812733"

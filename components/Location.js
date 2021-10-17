@@ -7,7 +7,7 @@ export default function Location() {
   return (
     <>
       <div className="text-center mt-16">
-        <h1 className="text-4xl md:text-6xl font-serif">Địa chỉ</h1>
+        <h1 className="text-6xl font-serif">Địa chỉ</h1>
         <h2 className="text-logo text-2xl mt-2 mb-4">
           <span className="">ĐIỂM TÂM SÚ KY</span>
           <span className="font-bold text-3xl my-1 block">58/1A Âu Cơ</span>
