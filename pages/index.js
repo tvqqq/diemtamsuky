@@ -14,6 +14,9 @@ export default function Home() {
           content="Quán phục vụ các món dimsum truyền thống Trung Hoa: Há Cảo, Xíu Mại, Bánh Xếp, Bánh Bao v.v..."
         />
         <link rel="icon" href="/favicon.ico" />
+        <meta property="og:image" content="/card-visit.png" />
+        <meta property="og:image:width" content="1000" />
+        <meta property="og:image:height" content="600" />
       </Head>
 
       <main>
