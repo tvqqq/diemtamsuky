@@ -7,9 +7,14 @@ export default function Location() {
       <div className="text-center mt-16">
         <h1 className="text-4xl md:text-6xl font-serif">Địa chỉ</h1>
         <h2 className="text-logo text-2xl mt-2 mb-4">
-          <span className="text-2xl">ĐIỂM TÂM SÚ KY</span>
-          <span className="font-bold my-1 block">58/1A Âu Cơ</span>
+          <span className="">ĐIỂM TÂM SÚ KY</span>
+          <span className="font-bold text-3xl my-1 block">58/1A Âu Cơ</span>
           <span>Phường 9 Quận Tân Bình</span>
+          <span className="block text-sm mt-1 text-gray-800">
+            (Cách vòng xoay Lê Đại Hành Q11 100 mét,
+            <br />
+            Hẻm 58, quán đối diện tiệm bánh Hỷ Lâm Môn Âu Cơ)
+          </span>
         </h2>
         <div
           className="shadow-2xl"

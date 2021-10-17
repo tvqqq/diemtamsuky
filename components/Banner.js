@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { useState } from 'react'
 import styles from './banner.module.css'
-import Story from './Story'
+import Introduction from './Introduction'
 
 export default function Banner() {
   const [story, showStory] = useState(false)
@@ -38,8 +38,8 @@ export default function Banner() {
             </>
           ) : (
             <>
-              <Story />
-              <div className="mb-10">
+              <Introduction />
+              <div className="my-5">
                 <button
                   onClick={() => showStory(false)}
                   className="z-100 cursor-pointer text-sm rounded-full shadow-lg bg-logo border-logo text-white px-4 py-2 font-bold border-2 hover:bg-transparent hover:text-logo transition ease-in-out"
