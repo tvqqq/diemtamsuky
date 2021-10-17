@@ -11,7 +11,7 @@ export default function Banner() {
         className={`flex flex-col items-center justify-center h-screen bg-center bg-cover bg-banner-1 ${styles.bgParallax}`}
       >
         <div
-          className={`px-3 bg-opacity-30 bg-white rounded-lg shadow-2xl text-center ${
+          className={`px-3 bg-opacity-30 bg-white rounded-lg shadow-2xl text-center animate__animated animate__fadeIn ${
             story ? 'md:px-8 bg-opacity-60' : 'bg-opacity-30'
           }`}
         >
@@ -24,12 +24,13 @@ export default function Banner() {
                   width="100%"
                   height="100%"
                   layout="responsive"
+                  className="animate__animated animate__bounceIn"
                 />
               </div>
               <div className="mb-10">
                 <button
                   onClick={() => showStory(true)}
-                  className="z-100 cursor-pointer text-sm rounded-full shadow-lg bg-logo border-logo text-white px-4 py-2 font-bold border-2 hover:bg-transparent hover:text-logo transition ease-in-out"
+                  className="z-100 cursor-pointer text-sm rounded-full shadow-lg bg-logo border-logo text-white px-4 py-2 font-bold border-2 hover:bg-transparent hover:text-logo transition ease-in-out animate__animated animate__bounceIn"
                 >
                   Xem giới thiệu
                 </button>

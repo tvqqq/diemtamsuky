@@ -13,8 +13,7 @@ module.exports = {
       },
     },
     fontFamily: {
-      mono: ['Ephesis'],
-      serif: ['"Cormorant SC"'],
+      serif: ['Lobster'],
     },
   },
   variants: {

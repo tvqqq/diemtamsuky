@@ -3,7 +3,7 @@ import Image from 'next/image'
 export default function Story() {
   return (
     <>
-      <div className="w-72 text-center p-2">
+      <div className="w-72 text-center p-2 animate__animated animate__zoomIn">
         <Image
           src="/chef.jpg"
           alt="Chef"
