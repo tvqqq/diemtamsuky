@@ -39,6 +39,12 @@ export default function Menu() {
       note: '/ 1 phần / 3 viên',
     },
     {
+      name: 'Tàu hủ ky sốt dầu hào',
+      price: '32.000',
+      image: 'tauhuky.jpg',
+      note: '/ 1 phần / 2 cuốn',
+    },
+    {
       name: 'Bánh bao kim sa',
       price: '32.000',
       image: 'banhbaokimsa.jpg',
@@ -83,10 +89,8 @@ export default function Menu() {
   ]
   return (
     <>
-      <div className="py-20 px-5 lg:px-32">
-        <h1 className="text-center text-4xl md:text-6xl font-serif mb-4">
-          Các món điểm tâm
-        </h1>
+      <div className="pt-16 py-20 px-5 lg:px-32">
+        <h1 className="text-center text-6xl font-serif mb-4">Menu</h1>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {menuItems.map((item) => (
             <MenuItem

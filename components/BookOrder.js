@@ -30,7 +30,7 @@ export default function BookOrder() {
           </a>
 
           <a
-            href="http://zaloapp.com/qr/p/2xs9e65t2hgs"
+            href="https://zalo.me/0903812733"
             target="_blank"
             className="flex flex-row items-center justify-center my-1 p-3 transition duration-500 ease-in-out hover:bg-white hover:bg-opacity-70 transform hover:-translate-y-1 hover:scale-105"
             rel="noreferrer"
