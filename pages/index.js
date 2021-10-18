@@ -36,7 +36,7 @@ export default function Home() {
       </main>
 
       <footer className="text-center my-10 text-sm text-gray-700">
-        © 2021 diemtamsuky.com
+        © 2021 diemtamsuky.site
       </footer>
     </div>
   )
