@@ -1,11 +1,18 @@
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
-import { ChakraProvider } from '@chakra-ui/react'
-import { UserProvider } from '@auth0/nextjs-auth0'
 import 'tailwindcss/tailwind.css'
 import '../styles/globals.css'
 import 'animate.css'
 import * as ga from '../lib/ga'
+
+import FrontLayout from '../layouts/front'
+import AdminLayout from '../layouts/admin'
+import AdminLoginLayout from '../layouts/admin-login'
+const layouts = {
+  front: FrontLayout,
+  admin: AdminLayout,
+  adminLogin: AdminLoginLayout,
+}
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter()
@@ -25,12 +32,12 @@ function MyApp({ Component, pageProps }) {
     }
   }, [router.events])
 
+  const Layout = layouts[Component.layout] || ((children) => <>{children}</>)
+
   return (
-    <ChakraProvider>
-      <UserProvider>
-        <Component {...pageProps} />
-      </UserProvider>
-    </ChakraProvider>
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
   )
 }
 

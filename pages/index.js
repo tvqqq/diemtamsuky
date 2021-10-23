@@ -4,7 +4,7 @@ import Menu from '../components/Menu'
 import BookOrder from '../components/BookOrder'
 import Location from '../components/Location'
 
-export default function Home() {
+const Home = () => {
   return (
     <div>
       <Head>
@@ -41,3 +41,6 @@ export default function Home() {
     </div>
   )
 }
+
+Home.layout = 'front'
+export default Home
