@@ -1,6 +1,6 @@
 import { useUser } from '@auth0/nextjs-auth0'
 import { useRouter } from 'next/router'
-import Loading from '../components/admin/Loading'
+import Loading from '../components/admin/shared/Loading'
 
 const PATH_ADMIN_LOGIN = '/admin/login'
 

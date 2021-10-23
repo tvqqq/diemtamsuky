@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import Banner from '../components/Banner'
-import Menu from '../components/Menu'
-import BookOrder from '../components/BookOrder'
-import Location from '../components/Location'
+import Banner from '../components/front/Banner'
+import Menu from '../components/front/Menu'
+import BookOrder from '../components/front/BookOrder'
+import Location from '../components/front/Location'
 
 const Home = () => {
   return (
