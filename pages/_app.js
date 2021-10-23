@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
+import { ChakraProvider } from '@chakra-ui/react'
 import 'tailwindcss/tailwind.css'
 import '../styles/globals.css'
 import 'animate.css'
@@ -23,7 +24,11 @@ function MyApp({ Component, pageProps }) {
     }
   }, [router.events])
 
-  return <Component {...pageProps} />
+  return (
+    <ChakraProvider>
+      <Component {...pageProps} />
+    </ChakraProvider>
+  )
 }
 
 export default MyApp
