@@ -1,12 +1,19 @@
-import { useUser } from '@auth0/nextjs-auth0'
-import { Box, Text } from '@chakra-ui/react'
+import Head from 'next/head'
+import Dashboard from '../../components/admin/Dashboard'
 
 const Admin = () => {
-  // const { user, error, isLoading } = useUser()
-  // if (isLoading) return <div>Loading...</div>
-  // if (error) return <div>{error.message}</div>
+  return (
+    <>
+      <Head>
+        <title>Admin - Điểm Tâm Sú Ky</title>
+      </Head>
 
-  return <div>Admin Dashboard</div>
+      <h2 className="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
+        Dashboard
+      </h2>
+      <Dashboard />
+    </>
+  )
 }
 
 Admin.layout = 'admin'

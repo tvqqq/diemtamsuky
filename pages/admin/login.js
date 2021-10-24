@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import {
   Box,
   Stack,
@@ -13,66 +14,71 @@ import {
 
 const Login = () => {
   return (
-    <Box position={'relative'}>
-      <Container
-        as={SimpleGrid}
-        maxW={'7xl'}
-        columns={{ base: 1 }}
-        spacing={{ base: 10, lg: 32 }}
-        py={{ base: 10, sm: 20, lg: 32 }}
-      >
-        <Stack
-          bg={'gray.50'}
-          rounded={'xl'}
-          p={{ base: 4, sm: 6, md: 8 }}
-          spacing={{ base: 8 }}
-          maxW={{ lg: 'lg' }}
-          mx="auto"
+    <>
+      <Head>
+        <title>Đăng nhập Điểm Tâm Sú Ky</title>
+      </Head>
+      <Box position={'relative'}>
+        <Container
+          as={SimpleGrid}
+          maxW={'7xl'}
+          columns={{ base: 1 }}
+          spacing={{ base: 10, lg: 32 }}
+          py={{ base: 10, sm: 20, lg: 32 }}
         >
-          <Stack spacing={4}>
-            <Heading
-              lineHeight={1.1}
-              fontSize={{ base: '3xl', sm: '4xl', md: '5xl', lg: '6xl' }}
-            >
-              Trang quản trị{' '}
-              <Text
-                as={'span'}
-                bgGradient="linear(to-r, red.400,pink.400)"
-                bgClip="text"
+          <Stack
+            bg={'gray.50'}
+            rounded={'xl'}
+            p={{ base: 4, sm: 6, md: 8 }}
+            spacing={{ base: 8 }}
+            maxW={{ lg: 'lg' }}
+            mx="auto"
+          >
+            <Stack spacing={4}>
+              <Heading
+                lineHeight={1.1}
+                fontSize={{ base: '3xl', sm: '4xl', md: '5xl', lg: '6xl' }}
               >
-                DTSK
-              </Text>{' '}
-            </Heading>
-            <Text color={'gray.500'} fontSize={{ base: 'sm', sm: 'md' }}>
-              Click vào nút bên dưới để đăng nhập vào hệ thống!
-            </Text>
+                Trang quản trị{' '}
+                <Text
+                  as={'span'}
+                  bgGradient="linear(to-r, red.400,pink.400)"
+                  bgClip="text"
+                >
+                  DTSK
+                </Text>{' '}
+              </Heading>
+              <Text color={'gray.500'} fontSize={{ base: 'sm', sm: 'md' }}>
+                Click vào nút bên dưới để đăng nhập vào hệ thống!
+              </Text>
+            </Stack>
+            <Box as={'form'} mt={0}>
+              <Link href="/api/auth/login" style={{ textDecoration: 'none' }}>
+                <Button
+                  fontFamily={'heading'}
+                  mt={0}
+                  w={'full'}
+                  bgGradient="linear(to-r, red.400,pink.400)"
+                  color={'white'}
+                  _hover={{
+                    bgGradient: 'linear(to-r, red.400,pink.400)',
+                    boxShadow: 'xl',
+                  }}
+                >
+                  Đăng nhập
+                </Button>
+              </Link>
+            </Box>
           </Stack>
-          <Box as={'form'} mt={0}>
-            <Link href="/api/auth/login" style={{ textDecoration: 'none' }}>
-              <Button
-                fontFamily={'heading'}
-                mt={0}
-                w={'full'}
-                bgGradient="linear(to-r, red.400,pink.400)"
-                color={'white'}
-                _hover={{
-                  bgGradient: 'linear(to-r, red.400,pink.400)',
-                  boxShadow: 'xl',
-                }}
-              >
-                Đăng nhập
-              </Button>
-            </Link>
-          </Box>
-        </Stack>
-      </Container>
-      <Blur
-        position={'absolute'}
-        top={-10}
-        left={-10}
-        style={{ filter: 'blur(70px)' }}
-      />
-    </Box>
+        </Container>
+        <Blur
+          position={'absolute'}
+          top={-10}
+          left={-10}
+          style={{ filter: 'blur(70px)' }}
+        />
+      </Box>
+    </>
   )
 }
 
