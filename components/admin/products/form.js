@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import {
-  useToast,
   FormControl,
   FormLabel,
   FormErrorMessage,
@@ -23,11 +22,8 @@ const ProductForm = ({
   onConfirmCreate,
   onConfirmEdit,
 }) => {
-  const toast = useToast()
-  const [isLoading, setIsLoading] = useState(false)
-
   //#region Data
-  const itemName = 'products'
+  const model = 'products'
   const [initialValues, setInitialValues] = useState({
     name: '',
     price: 0,
@@ -37,6 +33,7 @@ const ProductForm = ({
   //#endregion
 
   // Get detail for modal content
+  const [isLoading, setIsLoading] = useState(false)
   useEffect(() => {
     if (modalType !== 'edit') {
       return []
@@ -45,10 +42,10 @@ const ProductForm = ({
     const fetchData = async () => {
       const res = await apiAdmin({
         method: 'get',
-        url: `/${itemName}/${modalId}`,
+        url: `/${model}/${modalId}`,
       })
       if (res.error !== 0) {
-        toast(res.message, 'danger')
+        toast(res.message, 'error')
         setIsLoading(false)
         return []
       }
@@ -72,15 +69,16 @@ const ProductForm = ({
         const isCreate = modalType === 'create'
         const dataSend = {
           method: isCreate ? 'post' : 'put',
-          url: `/${itemName}/${isCreate ? 'create' : modalId}`,
+          url: `/${model}/${isCreate ? 'create' : modalId}`,
           body: values,
         }
         const res = await apiAdmin(dataSend)
+        setSubmitting(false)
         if (res.error !== 0) {
-          toast(res.message, 'danger')
+          toast(res.message, 'error')
+          return false
         }
         isCreate ? onConfirmCreate() : onConfirmEdit()
-        setSubmitting(false)
       }}
     >
       {isLoading ? (

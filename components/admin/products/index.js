@@ -36,7 +36,8 @@ const Products = ({ data }) => {
   //#endregion
 
   //#region Data
-  const nameItem = 'món ăn'
+  const model = 'products'
+  const itemName = 'món ăn'
   const products = useMemo(() => data.products, [data.products])
   const columns = useMemo(
     () => [
@@ -101,7 +102,7 @@ const Products = ({ data }) => {
     onOpenForm()
   }
   const onConfirmCreate = () => {
-    toast(`Thêm ${nameItem} thành công!`)
+    toast(`Thêm ${itemName} thành công!`)
     onCloseForm()
     refreshData()
   }
@@ -114,7 +115,7 @@ const Products = ({ data }) => {
     onOpenForm()
   }
   const onConfirmEdit = () => {
-    toast(`Cập nhật ${nameItem} thành công!`)
+    toast(`Cập nhật ${itemName} thành công!`)
     onCloseForm()
     refreshData()
   }
@@ -130,16 +131,16 @@ const Products = ({ data }) => {
     setIsSubmittingDelete(true)
     const res = await apiAdmin({
       method: 'delete',
-      url: '/products/' + modalId,
+      url: `/${model}/${modalId}`,
     })
+    setIsSubmittingDelete(false)
     if (res.error !== 0) {
-      toast(res.message, 'danger')
+      toast(res.message, 'error')
       return false
     }
-    toast(`Xóa ${nameItem} thành công!`)
+    toast(`Xóa ${itemName} thành công!`)
     onCloseDelete()
     refreshData()
-    setIsSubmittingDelete(false)
   }
   //#endregion Delete
 
