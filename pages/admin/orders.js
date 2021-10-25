@@ -1,4 +1,4 @@
-import Orders from '../../components/admin/Orders'
+import Orders from '../../components/admin/orders'
 import apiAdmin from '../../lib/apiAdmin'
 import { Flex, Icon, Box } from '@chakra-ui/react'
 import { FiShoppingBag } from 'react-icons/fi'
