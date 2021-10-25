@@ -16,7 +16,7 @@ import * as Yup from 'yup'
 import apiAdmin from '../../../lib/apiAdmin'
 import toast from '../../../lib/toast'
 
-const ProductForm = ({
+const UserForm = ({
   modalType,
   modalId,
   model,
@@ -25,10 +25,19 @@ const ProductForm = ({
 }) => {
   //#region Data
   const [initialValues, setInitialValues] = useState({
+    zaloId: '',
+    birthday: '',
     name: '',
-    price: 0,
-    description: '',
-    image: '',
+    picture: '',
+    status: 0,
+    address: '',
+    phone: '',
+  })
+  const validationSchema = Yup.object({
+    name: Yup.string().required('Vui lòng nhập thông tin'),
+    address: Yup.string().required('Vui lòng nhập thông tin'),
+    phone: Yup.string().required('Vui lòng nhập thông tin'),
+    status: Yup.string().required('Vui lòng nhập thông tin'),
   })
   //#endregion
 
@@ -49,7 +58,7 @@ const ProductForm = ({
         setIsLoading(false)
         return []
       }
-      setInitialValues(res.data.product)
+      setInitialValues(res.data.user)
       setIsLoading(false)
     }
     fetchData()
@@ -59,12 +68,7 @@ const ProductForm = ({
     <Formik
       enableReinitialize={true}
       initialValues={initialValues}
-      validationSchema={Yup.object({
-        name: Yup.string().required('Vui lòng nhập thông tin'),
-        price: Yup.string().required('Vui lòng nhập thông tin'),
-        description: Yup.string().required('Vui lòng nhập thông tin'),
-        image: Yup.string().required('Vui lòng nhập thông tin'),
-      })}
+      validationSchema={validationSchema}
       onSubmit={async (values, { setSubmitting }) => {
         const isCreate = modalType === 'create'
         const dataSend = {
@@ -86,64 +90,54 @@ const ProductForm = ({
       ) : (
         (props) => (
           <Form>
+            <Field name="zaloId">
+              {({ field, form }) => (
+                <FormControl
+                  isDisabled={true}
+                  isInvalid={form.errors.zaloId && form.touched.zaloId}
+                  className="mb-4"
+                >
+                  <FormLabel htmlFor="zaloId">Zalo ID</FormLabel>
+                  <Input {...field} id="zaloId" placeholder="Zalo ID" />
+                  <FormErrorMessage>{form.errors.zaloId}</FormErrorMessage>
+                </FormControl>
+              )}
+            </Field>
             <Field name="name">
               {({ field, form }) => (
                 <FormControl
+                  isReadOnly={true}
                   isInvalid={form.errors.name && form.touched.name}
                   className="mb-4"
                 >
-                  <FormLabel htmlFor="name">Tên món</FormLabel>
-                  <Input {...field} id="name" placeholder="Tên món" />
+                  <FormLabel htmlFor="name">Tên KH</FormLabel>
+                  <Input {...field} id="name" placeholder="Tên KH" />
                   <FormErrorMessage>{form.errors.name}</FormErrorMessage>
                 </FormControl>
               )}
             </Field>
-            <Field name="price">
+            <Field name="phone">
               {({ field, form }) => (
                 <FormControl
-                  isInvalid={form.errors.price && form.touched.price}
+                  isInvalid={form.errors.phone && form.touched.phone}
                   className="mb-4"
                 >
-                  <FormLabel htmlFor="price">Đơn giá</FormLabel>
-                  {/* <NumberInput>
-                  <NumberInputField
-                    {...field}
-                    id="price"
-                    placeholder="Đơn giá"
-                  />
-                </NumberInput>*/}
-                  <Input {...field} id="price" placeholder="Đơn giá" />
-                  <FormErrorMessage>{form.errors.price}</FormErrorMessage>
+                  <FormLabel htmlFor="phone">Số điện thoại</FormLabel>
+                  <Input {...field} id="phone" placeholder="Số điện thoại" />
+                  <FormErrorMessage>{form.errors.phone}</FormErrorMessage>
                 </FormControl>
               )}
             </Field>
-            <Field name="description">
+            <Field name="address">
               {({ field, form }) => (
                 <FormControl
-                  isInvalid={
-                    form.errors.description && form.touched.description
-                  }
+                  isReadOnly={true}
+                  isInvalid={form.errors.address && form.touched.address}
                   className="mb-4"
                 >
-                  <FormLabel htmlFor="description">Ghi chú</FormLabel>
-                  <Input {...field} id="description" placeholder="Ghi chú" />
-                  <FormErrorMessage>{form.errors.description}</FormErrorMessage>
-                </FormControl>
-              )}
-            </Field>
-            <Field name="image">
-              {({ field, form }) => (
-                <FormControl
-                  isInvalid={form.errors.image && form.touched.image}
-                  className="mb-4"
-                >
-                  <FormLabel htmlFor="image">Hình ảnh</FormLabel>
-                  <Input {...field} id="image" placeholder="URL hình ảnh" />
-                  <FormHelperText>
-                    Upload hình ảnh lên Cloudinary để lấy URL. Chỉ nhập path
-                    file, ví dụ: hacao.png
-                  </FormHelperText>
-                  <FormErrorMessage>{form.errors.image}</FormErrorMessage>
+                  <FormLabel htmlFor="address">Địa chỉ</FormLabel>
+                  <Input {...field} id="address" placeholder="Địa chỉ" />
+                  <FormErrorMessage>{form.errors.address}</FormErrorMessage>
                 </FormControl>
               )}
             </Field>
@@ -164,4 +158,4 @@ const ProductForm = ({
   )
 }
 
-export default ProductForm
+export default UserForm

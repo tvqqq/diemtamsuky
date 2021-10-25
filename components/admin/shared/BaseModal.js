@@ -11,6 +11,7 @@ import {
 export default function BaseModal({
   isOpen,
   onClose,
+  nameModel,
   modalType,
   modalId,
   onConfirmCreate,
@@ -29,7 +30,7 @@ export default function BaseModal({
       <ModalOverlay />
       <ModalContent>
         <ModalHeader>
-          {modalType === 'create' ? 'Thêm mới' : 'Cập nhật'}
+          {(modalType === 'create' ? 'Thêm mới' : 'Cập nhật') + ` ${nameModel}`}
         </ModalHeader>
         <ModalCloseButton />
         <ModalBody>

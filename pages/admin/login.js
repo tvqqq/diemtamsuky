@@ -16,7 +16,7 @@ const Login = () => {
   return (
     <>
       <Head>
-        <title>Đăng nhập Điểm Tâm Sú Ky</title>
+        <title>Đăng nhập - Admin DTSK</title>
       </Head>
       <Box position={'relative'}>
         <Container

@@ -18,7 +18,7 @@ import BaseModal from '../shared/BaseModal'
 import DeleteAlertDialog from '../shared/DeleteAlertDialog'
 import apiAdmin from '../../../lib/apiAdmin'
 import toast from '../../../lib/toast'
-import ProductForm from './form'
+import UserForm from './form'
 
 const Users = ({ data, model, nameModel }) => {
   //#region Init
@@ -36,7 +36,7 @@ const Users = ({ data, model, nameModel }) => {
   //#endregion
 
   //#region Data
-  const products = useMemo(() => data.products, [data.products])
+  const users = useMemo(() => data.users, [data.users])
   const columns = useMemo(
     () => [
       {
@@ -47,12 +47,12 @@ const Users = ({ data, model, nameModel }) => {
         },
       },
       {
-        Header: 'Hình ảnh',
-        accessor: 'image',
+        Header: 'Avatar',
+        accessor: 'picture',
         Cell: ({ value }) => {
           return (
             <Image
-              src={data.cloudinaryUrl + value}
+              src={value}
               alt={value}
               width={50}
               height={50}
@@ -62,16 +62,16 @@ const Users = ({ data, model, nameModel }) => {
         },
       },
       {
-        Header: 'Tên món',
+        Header: 'Tên KH',
         accessor: 'name',
       },
       {
-        Header: 'Đơn giá',
-        accessor: 'price',
+        Header: 'Số điện thoại',
+        accessor: 'phone',
       },
       {
-        Header: 'Ghi chú',
-        accessor: 'description',
+        Header: 'Địa chỉ',
+        accessor: 'address',
       },
       {
         Header: 'Actions',
@@ -82,9 +82,9 @@ const Users = ({ data, model, nameModel }) => {
               <Button colorScheme="teal" onClick={() => onEdit(value)}>
                 <Icon as={FiEdit} />
               </Button>
-              <Button colorScheme="red" onClick={() => onDelete(value)}>
+              {/* <Button colorScheme="red" onClick={() => onDelete(value)}>
                 <Icon as={FiTrash} />
-              </Button>
+              </Button> */}
             </ButtonGroup>
           )
         },
@@ -151,24 +151,23 @@ const Users = ({ data, model, nameModel }) => {
             pointerEvents="none"
             children={<FiSearch color="gray.400" />}
           />
-          <Input type="text" placeholder="Tìm kiếm nhanh theo tên món..." />
+          <Input
+            type="text"
+            placeholder="Tìm kiếm nhanh theo tên khách hàng hoặc số điện thoại..."
+          />
         </InputGroup>
 
-        <Button
+        {/* <Button
           leftIcon={<FiPlusCircle />}
           colorScheme="twitter"
           variant="solid"
           onClick={() => onCreate()}
         >
           Thêm mới
-        </Button>
+        </Button> */}
       </Flex>
 
-      <BaseTable
-        columns={columns}
-        data={products}
-        isRefreshing={isRefreshing}
-      />
+      <BaseTable columns={columns} data={users} isRefreshing={isRefreshing} />
 
       <BaseModal
         isOpen={isOpenForm}
@@ -179,15 +178,15 @@ const Users = ({ data, model, nameModel }) => {
         onConfirmCreate={onConfirmCreate}
         onConfirmEdit={onConfirmEdit}
       >
-        <ProductForm model={model} />
+        <UserForm model={model} />
       </BaseModal>
 
-      <DeleteAlertDialog
+      {/* <DeleteAlertDialog
         isOpen={isOpenDelete}
         onClose={onCloseDelete}
         isSubmitting={isSubmittingDelete}
         onConfirmDelete={onConfirmDelete}
-      />
+      /> */}
     </>
   )
 }
