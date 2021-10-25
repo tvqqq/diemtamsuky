@@ -24,6 +24,7 @@ import {
   FiTag,
   FiPhone,
   FiMapPin,
+  FiCreditCard,
 } from 'react-icons/fi'
 import { useRouter } from 'next/router'
 import BaseTable from '../shared/BaseTable'
@@ -58,8 +59,8 @@ const Orders = ({ data, model, nameModel }) => {
         accessor: '',
         Cell: ({ row }) => {
           return (
-            <Box>
-              <Text className="my-1">
+            <Box className="w-full">
+              <Text className="my-1 text-sm">
                 <Badge
                   variant="outline"
                   className="cursor-pointer hover:bg-gray-200"
@@ -68,19 +69,6 @@ const Orders = ({ data, model, nameModel }) => {
                   #{row.original._id}
                 </Badge>
               </Text>
-              <Text className="my-1" fontSize="sm">
-                Tổng tiền: {formatPrice(row.original.total)}
-              </Text>
-            </Box>
-          )
-        },
-      },
-      {
-        Header: 'Thông tin người đặt',
-        accessor: '',
-        Cell: ({ row }) => {
-          return (
-            <Box>
               <List spacing={2} my={2}>
                 <ListItem>
                   <ListIcon as={FiTag} color="gray.500" />
@@ -94,12 +82,15 @@ const Orders = ({ data, model, nameModel }) => {
                   <ListIcon as={FiMapPin} color="gray.500" />
                   {row.original.address}
                 </ListItem>
+                <ListItem>
+                  <ListIcon as={FiCreditCard} color="gray.500" />
+                  {formatPrice(row.original.total)}
+                </ListItem>
               </List>
             </Box>
           )
         },
       },
-
       {
         Header: 'Trạng thái',
         accessor: 'status',
@@ -183,16 +174,17 @@ const Orders = ({ data, model, nameModel }) => {
   return (
     <>
       {/* Toolbox */}
-      <Flex mb={4} justify="space-between">
-        <InputGroup width="96">
+      <Flex
+        mb={2}
+        justify="space-between"
+        className="flex-col md:flex-row w-auto"
+      >
+        <InputGroup className="w-100 md:w-80 mb-2">
           <InputLeftElement
             pointerEvents="none"
             children={<FiSearch color="gray.400" />}
           />
-          <Input
-            type="text"
-            placeholder="Tìm kiếm nhanh theo tên khách hàng hoặc số điện thoại..."
-          />
+          <Input type="text" placeholder="Mã đơn..." />
         </InputGroup>
 
         {/* <Button

@@ -22,7 +22,13 @@ const AdminOrders = ({ data }) => {
       </Box>
       <hr />
 
-      <Box boxShadow="lg" p="6" rounded="lg" bg="white" overflowX="auto">
+      <Box
+        boxShadow="lg"
+        p={{ sm: 0, md: 6 }}
+        rounded="lg"
+        bg="white"
+        overflowX="auto"
+      >
         <Orders data={data} model={MODEL} nameModel={NAME_MODEL} />
       </Box>
     </>

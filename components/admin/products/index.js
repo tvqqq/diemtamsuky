@@ -145,13 +145,17 @@ const Users = ({ data, model, nameModel }) => {
   return (
     <>
       {/* Toolbox */}
-      <Flex mb={4} justify="space-between">
-        <InputGroup width="96">
+      <Flex
+        mb={2}
+        justify="space-between"
+        className="flex-col md:flex-row w-auto"
+      >
+        <InputGroup className="w-100 md:w-80 mb-2">
           <InputLeftElement
             pointerEvents="none"
             children={<FiSearch color="gray.400" />}
           />
-          <Input type="text" placeholder="Tìm kiếm nhanh theo tên món..." />
+          <Input type="text" placeholder="Tên món..." />
         </InputGroup>
 
         <Button
