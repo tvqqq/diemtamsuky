@@ -11,7 +11,13 @@ import {
   Link,
   Box,
 } from '@chakra-ui/react'
-import { FiHome, FiList, FiUsers, FiLogOut } from 'react-icons/fi'
+import {
+  FiHome,
+  FiList,
+  FiUsers,
+  FiLogOut,
+  FiShoppingBag,
+} from 'react-icons/fi'
 import { useRouter } from 'next/router'
 import { useUser } from '@auth0/nextjs-auth0'
 
@@ -35,6 +41,11 @@ const MenuContent = () => {
       name: 'Khách hàng',
       url: '/admin/users',
       icon: FiUsers,
+    },
+    {
+      name: 'Đơn hàng',
+      url: '/admin/orders',
+      icon: FiShoppingBag,
     },
   ]
 
