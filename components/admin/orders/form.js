@@ -179,7 +179,7 @@ const UserForm = ({
                       0
                     )}{' '}
                   </Th>
-                  <Th>Tổng tiền:</Th>
+                  <Th>Tổng cộng:</Th>
                   <Th>
                     <span className="text-red-600 font-bold text-lg">
                       {formatPrice(initialValues.total)}

@@ -62,7 +62,7 @@ const MenuContent = () => {
             Điểm tâm Sú Ky
           </Text>
         </a>
-        <div className="mt-6 border-t-2 border-gray-100">
+        <div className="mt-4 border-t-2 border-gray-100">
           <ul>
             {pages.map((page) => (
               <li key={page.url} className="relative ">

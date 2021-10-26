@@ -1,6 +1,6 @@
 export default function Navbar(props) {
   return (
-    <div>
+    <div className="md:hidden">
       <button
         className="fixed focus:outline-none bottom-4 right-2 z-50 bg-logo bg-opacity-50 text-white rounded-full p-2"
         aria-label="Menu"
