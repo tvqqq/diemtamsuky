@@ -1,10 +1,10 @@
 import Head from 'next/head'
-import Banner from '../components/Banner'
-import Menu from '../components/Menu'
-import BookOrder from '../components/BookOrder'
-import Location from '../components/Location'
+import Banner from '../components/front/Banner'
+import Menu from '../components/front/Menu'
+import BookOrder from '../components/front/BookOrder'
+import Location from '../components/front/Location'
 
-export default function Home() {
+const Home = () => {
   return (
     <div>
       <Head>
@@ -41,3 +41,6 @@ export default function Home() {
     </div>
   )
 }
+
+Home.layout = 'front'
+export default Home
