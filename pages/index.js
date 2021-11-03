@@ -38,6 +38,15 @@ export default function Home() {
       <footer className="text-center my-10 text-sm text-gray-700">
         © 2021 diemtamsuky.site
       </footer>
+
+      <div
+        className="zalo-chat-widget"
+        data-oaid="1953750963713130800"
+        data-welcome-message="Điểm tâm Sú Ky xin chào! Bạn muốn quán hỗ trợ thông tin gì ạ?"
+        data-autopopup="0"
+        data-width=""
+        data-height=""
+      ></div>
     </div>
   )
 }

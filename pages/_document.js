@@ -22,6 +22,7 @@ export default class MyDocument extends Document {
           `,
             }}
           />
+          <script async defer src="https://sp.zalo.me/plugins/sdk.js" />
         </Head>
         <body>
           <Main />
