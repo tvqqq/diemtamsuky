@@ -5,6 +5,15 @@ import '../styles/globals.css'
 import 'animate.css'
 import * as ga from '../lib/ga'
 
+import FrontLayout from '../layouts/front'
+import AdminLayout from '../layouts/admin'
+import AdminLoginLayout from '../layouts/admin-login'
+const layouts = {
+  front: FrontLayout,
+  admin: AdminLayout,
+  adminLogin: AdminLoginLayout,
+}
+
 function MyApp({ Component, pageProps }) {
   const router = useRouter()
 
@@ -23,7 +32,13 @@ function MyApp({ Component, pageProps }) {
     }
   }, [router.events])
 
-  return <Component {...pageProps} />
+  const Layout = layouts[Component.layout] || ((children) => <>{children}</>)
+
+  return (
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
+  )
 }
 
 export default MyApp
