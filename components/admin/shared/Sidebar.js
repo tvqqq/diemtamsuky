@@ -86,12 +86,11 @@ const MenuContent = () => {
           </ul>
         </div>
         <div className="px-6 my-6">
-          <button className="flex items-center justify-between w-full px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-logo border border-transparent rounded-lg active:bg-logo hover:bg-red-700 focus:outline-none focus:shadow-outline-red">
-            Mở Zalo OA (TODO)
-            <span className="ml-2" aria-hidden="true">
-              +
-            </span>
-          </button>
+          <a href="https://oa.zalo.me/chatv2" target="_blank" rel="noreferrer">
+            <button className="flex items-center justify-between w-full px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-logo border border-transparent rounded-lg active:bg-logo hover:bg-red-700 focus:outline-none focus:shadow-outline-red">
+              Mở Zalo OA Chat
+            </button>
+          </a>
         </div>
 
         <div className="absolute bottom-0 border-t-2 p-4 block w-full md:w-64">
