@@ -20,7 +20,7 @@ const AdminLayout = ({ children }) => {
             <Sidebar isOpen={isOpen} onClose={onClose} />
             <Navbar onOpen={onOpen} />
 
-            <main className="overflow-auto w-full h-full">
+            <main className="overflow-auto w-full">
               <Container maxW="container.xl" className="my-1 md:my-6">
                 {children}
               </Container>

@@ -31,7 +31,7 @@ export async function getServerSideProps(ctx) {
   const res = await apiAdmin({
     ctx,
     method: 'get',
-    url: `/${MODEL}/list`,
+    url: `/${MODEL}/list?admin=true`,
   })
 
   return {

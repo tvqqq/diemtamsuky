@@ -10,6 +10,8 @@ import {
   InputGroup,
   InputLeftElement,
   Input,
+  Stack,
+  Switch,
 } from '@chakra-ui/react'
 import { FiPlusCircle, FiEdit, FiTrash, FiSearch } from 'react-icons/fi'
 import { useRouter } from 'next/router'
@@ -19,6 +21,7 @@ import DeleteAlertDialog from '../shared/DeleteAlertDialog'
 import apiAdmin from '../../../lib/apiAdmin'
 import toast from '../../../lib/toast'
 import ProductForm from './form'
+import { formatPrice, formatDate } from '../../../lib/helper'
 
 const Users = ({ data, model, nameModel }) => {
   //#region Init
@@ -62,12 +65,31 @@ const Users = ({ data, model, nameModel }) => {
         },
       },
       {
+        Header: 'Bật / Tắt',
+        accessor: 'status',
+        Cell: ({ row, value }) => {
+          return (
+            <Stack direction="row">
+              <Switch
+                size="lg"
+                colorScheme="teal"
+                isChecked={value}
+                onChange={() => onStatusChange(row.original._id, value)}
+              />
+            </Stack>
+          )
+        },
+      },
+      {
         Header: 'Tên món',
         accessor: 'name',
       },
       {
         Header: 'Đơn giá',
         accessor: 'price',
+        Cell: ({ value }) => {
+          return formatPrice(value)
+        },
       },
       {
         Header: 'Ghi chú',
@@ -141,6 +163,21 @@ const Users = ({ data, model, nameModel }) => {
     refreshData()
   }
   //#endregion Delete
+
+  const onStatusChange = async (id, status) => {
+    const res = await apiAdmin({
+      method: 'put',
+      url: `/${model}/${id}`,
+      body: {
+        status: !status,
+      },
+    })
+    if (res.error !== 0) {
+      toast(res.message, 'error')
+      return false
+    }
+    refreshData()
+  }
 
   return (
     <>
