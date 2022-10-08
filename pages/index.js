@@ -3,6 +3,7 @@ import Banner from '../components/front/Banner'
 import Menu from '../components/front/Menu'
 import BookOrder from '../components/front/BookOrder'
 import Location from '../components/front/Location'
+import { Link } from '@chakra-ui/react'
 
 const Home = () => {
   return (
@@ -36,7 +37,10 @@ const Home = () => {
       </main>
 
       <footer className="text-center my-10 text-sm text-gray-700">
-        © 2021 diemtamsuky.site
+        © {new Date().getFullYear()}{' '}
+        <Link href="https://g.page/diemtamsuky?share" noLinkClass>
+          diemtamsuky
+        </Link>
       </footer>
 
       <div
